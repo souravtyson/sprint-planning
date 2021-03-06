@@ -3,8 +3,12 @@ import { Switch, Route, Link } from "react-router-dom";
 import InProgress from "./comnponent/InProgress";
 import Closed from "./comnponent/Closed";
 import NotStarted from "./comnponent/NotStarted";
+import { useState } from "react";
 
 export default function App() {
+  const [name, setName] = useState("");
+  const [desc, setDesc] = useState("");
+  const [points, setPoints] = useState("");
   const addStrories = () => {};
   return (
     <div className="App">
@@ -21,19 +25,37 @@ export default function App() {
       <hr />
       <div>
         <form onSubmit={addStrories}>
-          <label for="name">
+          <label>
             Story Name
-            <input type="text" name="name" id="name" />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </label>
           <br />
-          <label for="desc">
+          <label>
             Description
-            <input type="text" name="desc" id="desc" />
+            <input
+              type="text"
+              name="desc"
+              id="desc"
+              value={desc}
+              onChange={(e) => setDesc(e.target.value)}
+            />
           </label>
           <br />
-          <label for="points">
+          <label>
             Stroy Points
-            <input type="text" name="points" id="points" />
+            <input
+              type="text"
+              name="points"
+              id="points"
+              value={points}
+              onChange={(e) => setPoints(e.target.value)}
+            />
           </label>
           <br />
           <input type="submit" value="Submit"></input>
