@@ -4,12 +4,22 @@ import InProgress from "./comnponent/InProgress";
 import Closed from "./comnponent/Closed";
 import NotStarted from "./comnponent/NotStarted";
 import { useState } from "react";
+import { story } from "./mocky-data/stories";
 
 export default function App() {
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [points, setPoints] = useState("");
-  const addStrories = () => {};
+  const addStrories = (e) => {
+    e.preventDefault();
+    story.push({
+      name: name,
+      description: desc,
+      storyPoint: points,
+      stage: "NotStarted",
+      assignedTo: ""
+    });
+  };
   return (
     <div className="App">
       <div>
