@@ -5,6 +5,7 @@ import Closed from "./comnponent/Closed";
 import NotStarted from "./comnponent/NotStarted";
 
 export default function App() {
+  const addStrories = () => {};
   return (
     <div className="App">
       <div>
@@ -19,17 +20,23 @@ export default function App() {
       </Switch>
       <hr />
       <div>
-        <form>
-          <lable for="name">Story Name</lable>
-          <input type="text" name="name" id="name" />
+        <form onSubmit={addStrories}>
+          <label for="name">
+            Story Name
+            <input type="text" name="name" id="name" />
+          </label>
           <br />
-          <lable for="desc">Description</lable>
-          <input type="text" name="desc" id="desc" />
+          <label for="desc">
+            Description
+            <input type="text" name="desc" id="desc" />
+          </label>
           <br />
-          <lable for="points">Stroy Points</lable>
-          <input type="text" name="points" id="points" />
+          <label for="points">
+            Stroy Points
+            <input type="text" name="points" id="points" />
+          </label>
           <br />
-          <button>Submit</button>
+          <input type="submit" value="Submit"></input>
         </form>
       </div>
     </div>
